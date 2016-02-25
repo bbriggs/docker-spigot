@@ -1,0 +1,19 @@
+sudo: required
+
+language: bash
+
+services:
+ - docker
+
+branches:
+  only: 
+    - master
+
+install: 
+    - docker build -t bbriggs/spigot:1.8.3 .
+    - docker build -t bbriggs/spigot:latest
+
+after_success:
+    - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD --email=$DOCKER_EMAIL 
+    - docker push bbriggs/spigot:1.8.3
+    - docker push bbriggs/spigot:latest
