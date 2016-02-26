@@ -19,7 +19,7 @@ install:
     - docker build -t bbriggs/spigot:1.8 .
 
 script:
-    - docker run -it -p 25565:25565 -v /data:/data -e EULA=true -e TRAVIS=true bbriggs/spigot:1.8.3
+    - docker run -it -p 25565:25565 -v /data:/data -e EULA=true -e TRAVIS=true bbriggs/spigot:1.8
 
 after_success:
     - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD --email=$DOCKER_EMAIL 
