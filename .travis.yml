@@ -8,7 +8,6 @@ services:
 branches:
   only: 
     - master
-<<<<<<< HEAD
     - latest
     - 1.8.8
     - 1.8.3
@@ -18,20 +17,10 @@ branches:
 install:
     - sudo mkdir /data
     - docker build -t bbriggs/spigot:latest .
-=======
-    - 1.8.3
-
-install: 
-    - docker build -t bbriggs/spigot:1.8.3 .
->>>>>>> 1a6a2f3... Build version 1.8.3
 
 script:
     - docker run -it -p 25565:25565 -v /data:/data -e EULA=true -e TRAVIS=true bbriggs/spigot:latest 
 
 after_success:
     - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD --email=$DOCKER_EMAIL 
-<<<<<<< HEAD
     - docker push bbriggs/spigot:latest
-=======
-    - docker push bbriggs/spigot:1.8.3
->>>>>>> 1a6a2f3... Build version 1.8.3
