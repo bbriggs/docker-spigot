@@ -8,6 +8,8 @@ services:
 branches:
   only: 
     - master
+    - latest
+    - 1.8.3
 
 install: 
     - docker build -t bbriggs/spigot:1.8.3 .
