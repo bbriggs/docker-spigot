@@ -19,7 +19,7 @@ fi
 cd /data
 
 if [[ "$TRAVIS" = true ]]; then
-    echo "stop" | java -jar /minecraft/spigot-1.8.3.jar
+    echo "stop" | java -jar /minecraft/spigot-1.8.8.jar
 else
-    java -jar /minecraft/spigot-1.8.3.jar
+    java -jar /minecraft/spigot-1.8.8.jar
 fi
